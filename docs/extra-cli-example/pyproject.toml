@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "extra-cli-example"
+version = "0.1.0"
+description = ""
+authors = ["Robert Rosca <32569096+RobertRosca@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "extra_cli", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+typer = "^0.12.3"
+
+[tool.poetry.plugins."extra_cli.plugin"]
+example = "extra_cli.example:app"
+
+[tool.poetry.scripts]
+extra-example = "extra_cli.example:app"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
